@@ -3,7 +3,7 @@ from helpingFunctions import send
 
 def correctTransmission(N, totalPacketsNumber):
     currentPacketIndex = 0
-    currentPacketNumber = 0
+    currentPacketNumber = 1
     receiverAckFlag = False
 
     while(currentPacketNumber < totalPacketsNumber+N):

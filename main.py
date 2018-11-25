@@ -23,6 +23,6 @@ while(invalidChoice):
     elif(userChoice == "2"):
         invalidChoice = False
         retransmittedPacketNumber = input(
-            "\nPlease enter the number of the packet that is not transmitted\n(Number should be less than "+totalPacketsNumber+")\n")
+            "\nPlease enter the number of the packet that is not transmitted\n(Number should be between 1 and "+totalPacketsNumber+")\n")
         incorrectTransmission(int(N), int(totalPacketsNumber),
                               int(retransmittedPacketNumber))

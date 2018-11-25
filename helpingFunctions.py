@@ -2,7 +2,7 @@
 # parameters:
 ## destination (string): "Receiver" or "Sender" ##
 ## message: anything ##
-## receivingState (string): "accepted" or "rejected" ##
+## receivingState (string): "accepted" or "rejected" or 'lost' ##
 
 
 def send(destination, message, receivingState):
@@ -11,8 +11,12 @@ def send(destination, message, receivingState):
 
     if(receivingState != "accepted"):
         if(receivingState != "rejected"):
-            print("Incorrect sending format")
-            return
+            if(receivingState != "lost"):
+                print("Incorrect sending format")
+                return
+
+    if(receivingState == "lost"):
+        receivingState = "LOST"
 
     if(destination == "Receiver"):
         print("Sender         -----(" + message + ")-----> " +
